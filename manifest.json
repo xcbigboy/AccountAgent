@@ -7,7 +7,7 @@
     },
     {
       "path": "accounting_report/__init__.py",
-      "sha256": "aec0fe15173d093dd908fd8ab7cb5cd07c21f900cd0edd73718755a519ed3870",
+      "sha256": "d29d6d7b83c2e6a9aa843020830964e451eb21c3eefd4ec1d7ca99fa08127344",
       "bytes": 82
     },
     {
@@ -17,13 +17,13 @@
     },
     {
       "path": "accounting_report/ai.py",
-      "sha256": "6430c325bd5e312724863ff504c6d89f672d6bbfed1af5e683e407b6fe042c20",
-      "bytes": 4868
+      "sha256": "75265b7f46642735774ebf28a299e4c60f33d34726e6a5b3cf7bdca144dbb506",
+      "bytes": 5964
     },
     {
       "path": "accounting_report/cli.py",
-      "sha256": "d8c8d87b7656e0582a2df8e413222b67f6fc5223006f5699806e7509b19c8a9b",
-      "bytes": 3549
+      "sha256": "e0af14f165b853be81136c9633cc5a10cca2baaaaa496a752e814f8930943fca",
+      "bytes": 5995
     },
     {
       "path": "accounting_report/config.py",
@@ -39,6 +39,11 @@
       "path": "accounting_report/extract.py",
       "sha256": "df6ae7fe6afe89544af554d83e541b1e6750d2b27fa7827ffb9710b526dcc75f",
       "bytes": 3562
+    },
+    {
+      "path": "accounting_report/layout.py",
+      "sha256": "d67ca896ab175648eedcd25994036045b8dd09f53545b893e5fe122f48af1727",
+      "bytes": 12265
     },
     {
       "path": "accounting_report/numbers.py",
@@ -86,6 +91,11 @@
       "bytes": 6414
     },
     {
+      "path": "docs/deepseek.md",
+      "sha256": "a66e0f344cef9eb5415acae913fcaf54ad8a103511af3d1208fa72f39855d037",
+      "bytes": 6242
+    },
+    {
       "path": "examples/balance_sheet.xlsx",
       "sha256": "b85e97e80d55d1bc145324c825ce6e80011596f45e4abf245615ff38f2489853",
       "bytes": 4841
@@ -107,13 +117,13 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "c6d97f6c1bcb98c18bc097d9c4838ad83c88e0b4c6d7c0c516704f829748c6c9",
+      "sha256": "6064b8cd3119a01a8280a530a4ffbcead4e4ccca0624601ad1ba49ea36292d6d",
       "bytes": 490
     },
     {
       "path": "README.md",
-      "sha256": "1c5dfa268cf0a00aeaf97a35bc4261b4ad6091fbac51ad59e8e2e7ba28e91afd",
-      "bytes": 13278
+      "sha256": "f849fa37177faa1ac55f1f468798501638030a9b61224fd971f70d297c87beeb",
+      "bytes": 14943
     },
     {
       "path": "requirements-dev.txt",
@@ -136,14 +146,19 @@
       "bytes": 0
     },
     {
+      "path": "tests/test_layout.py",
+      "sha256": "0de17d6d1a9bdfec5f092c7a5561f1081ac0b57b91434e6d4cb2068cfa34fc47",
+      "bytes": 12151
+    },
+    {
       "path": "tests/test_project.py",
       "sha256": "2e7a41c40b7ae2c9b5cdc58aa58792ae2e000cace40e0c72a8fd145828e80854",
       "bytes": 22653
     },
     {
       "path": "VERIFICATION.md",
-      "sha256": "9d723001b7b6f4582d071f46a59543903d1bc479cc617080c01e99035aec93e9",
-      "bytes": 2429
+      "sha256": "82c590a385656cf141f74b43a5fd4a817eacbe94190baa27ba04137c12e891ef",
+      "bytes": 2976
     }
   ]
 }

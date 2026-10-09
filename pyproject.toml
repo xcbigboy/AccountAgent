@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "accounting-report"
-version = "1.0.0"
+version = "1.1.0"
 description = "Validated Excel to Word accounting report automation"
 requires-python = ">=3.10"
 dependencies = ["openpyxl>=3.1,<4", "lxml>=5,<7"]

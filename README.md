@@ -101,6 +101,21 @@ python -m accounting_report inspect-word --template your_report.docx
 
 ## 可选 AI 模块
 
+### DeepSeek V4：识别新的 Excel 布局
+
+新增 `inspect-layout`（本地结构扫描）、`discover`（模型定位）和 `approve-mapping`（确认并预演校验）三个命令。默认使用官方 `deepseek-v4-pro`，接口为 `https://api.deepseek.com/chat/completions`，密钥读取环境变量 `DEEPSEEK_API_KEY`。没有密钥时，原有示例和核心填报仍然可以运行。
+
+完整步骤见 [DeepSeek 接入与布局识别](docs/deepseek.md)。模型提出科目行、金额单元格和期间表头的坐标；程序从原 Excel 读取金额。确认映射且金额/Word 预演全部通过后才保存配置。保存后的配置可以离线复用。
+
+```powershell
+python -m accounting_report inspect-layout --excel examples/balance_sheet.xlsx --sheet "资产负债表" --output results/layout.json
+python -m accounting_report discover --excel examples/balance_sheet.xlsx --config examples/mapping.json --sheet "资产负债表" --output results/proposal.json
+```
+
+先按接入文档创建 `results` 目录并设置密钥。布局识别需要种子配置来定义必填科目、预期公司/期间/单位、Word 目标和勾稽关系；它不会独立推断或改变这些业务规则。换期间时先更新种子配置的 metadata 和 Word 静态日期。
+
+### 在已配置区域内匹配科目名称
+
 无需 API key 的本地文字相似度建议：
 
 ```sh
@@ -115,6 +130,14 @@ python -m accounting_report suggest --excel examples/balance_sheet.xlsx --config
 $env:REPORT_AI_API_KEY = "你的密钥"
 python -m accounting_report suggest --excel examples/balance_sheet.xlsx --config examples/mapping.json --ai --endpoint "https://api.openai.com/v1/chat/completions" --model "你的可用模型名" --output ai_suggestions.json
 ```
+
+DeepSeek 可以省略接口和模型参数：
+
+```powershell
+python -m accounting_report suggest --excel examples/balance_sheet.xlsx --config examples/mapping.json --ai --provider deepseek --output ai_suggestions.json
+```
+
+这条命令读取 `DEEPSEEK_API_KEY`；仍然只生成名称匹配建议。
 
 `--ai` 会把**字段 ID、候选科目名称、分区 ID 和科目所在坐标**发送给你指定的服务；不发送金额、完整文件或 `metadata`，但科目名称本身也可能有业务敏感性。默认核心流程不会发网络请求。AI 建议必须引用已存在的字段和候选坐标，跨 block、未知或重复字段会被拒绝；它不会修改配置、生成金额或直接填报。
 
@@ -141,7 +164,7 @@ python examples/create_templates.py
 
 - 支持普通 OOXML `.xlsx/.xlsm` 和 `.docx`；不支持扫描图片、旧 `.xls/.doc`、加密文件、OCR。签名 DOCX 修改后会使签名失效，应使用未签名模板。
 - `openpyxl` 不计算 Excel 公式。读取的是保存的缓存结果；缓存缺失则失败，缓存存在也可能已过期，必须先重算保存。项目不会保证缓存新鲜性，也不会联网刷新外部链接。源金额单元格的直接外部工作簿引用被拒绝；间接外部依赖或 Excel 中人为编写的公式需在源文件中核实。
-- 匹配依据配置，不自动推断报表口径、币种、单位或期间。严格验证覆盖配置里的字段和规则，不表示审计了整本工作簿。完整性由必填字段清单和勾稽配置决定。
+- 核心填报依据配置。可选 AI 可提出新布局，但不自行决定报表口径、币种、单位或期间。严格验证覆盖配置里的字段和规则，不表示审计了整本工作簿。完整性由必填字段清单和勾稽配置决定。
 - 默认必填字段不允许空值。真实零值可以填写；只有明确设置 `blank_zero: true` 才把空值当零并记录警告。横杠 `-` 不自动当零。
 - 勾稽检查可分别覆盖期初和期末，字段可同时用于核对而没有 `target`。校验使用原始数值；输出单位换算和舍入后，明细显示和合计显示可能有末位差额，不会人为调平。
 - 金额类型支持数字、千位分隔文本、括号负数、全角数字、人民币符号。无效千位分组、百分号、混合单位、布尔值、科学计数文本和非有限数值会被拒绝。输入最大有效数字 28 位；Excel 本身约 15 位有效数字的数值精度限制无法由后续程序恢复。
