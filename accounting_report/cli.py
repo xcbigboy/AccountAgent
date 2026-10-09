@@ -15,6 +15,11 @@ from .word import WordTemplate
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Excel 资产负债表 → Word 会计报告，先验证再填报")
     sub = parser.add_subparsers(dest="command", required=True)
+    ui = sub.add_parser("ui", help="打开中文本地网页操作界面")
+    ui.add_argument("--port", type=int, default=8765)
+    ui.add_argument("--no-browser", action="store_true")
+    ui.add_argument("--project", help="完整项目目录，默认当前目录")
+    ui.add_argument("--data-dir", help="界面文件存储目录，默认 results/ui")
     execute = sub.add_parser("run", help="验证数据和模板并填报")
     execute.add_argument("--excel", required=True)
     execute.add_argument("--template", required=True)
@@ -54,6 +59,10 @@ def main(argv=None):
             p.add_argument("--output", help="保存建议 JSON，路径须不存在")
     args = parser.parse_args(argv)
     try:
+        if args.command == "ui":
+            from .ui import serve
+            serve(args.project, args.data_dir, args.port, not args.no_browser)
+            return 0
         if getattr(args, "output", None) and Path(args.output).exists():
             raise ReportError("输出文件已存在，不覆盖已有结果")
         if args.command == "run":
