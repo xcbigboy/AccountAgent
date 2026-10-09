@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="app-token" content="__TOKEN__">
+  <title>AccountAgent · 会计报告助手</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <header class="header"><a class="brand" href="/"><span class="logo">A<span></span></span><span>AccountAgent<small>会计报告助手</small></span></a><span class="local"><i></i> 本机运行 · 文件留在本机</span></header>
+  <main>
+    <section class="intro"><div><div class="eyebrow">从数据到报告，少一点重复工作</div><h1>上传表格，<span>套用模板。</span></h1><p>自动填写会计报告，保留 Word 格式，并核对每一项金额。</p></div><button class="quiet" id="demoButton">先用示例试一试 <span aria-hidden="true">↗</span></button></section>
+    <nav class="steps" aria-label="填报步骤"><span id="step1" class="current"><b>1</b> 上传数据表</span><i></i><span id="step2"><b>2</b> 选择报告模板</span><i></i><span id="step3"><b>3</b> 生成并下载</span></nav>
+    <div class="workspace">
+      <section class="card upload-card"><div class="section-head"><h2><span class="number">01</span> 数据表格</h2><span class="hint">Excel</span></div>
+        <div class="dropzone" id="dropzone"><div class="file-icon" aria-hidden="true"><span>表</span><i></i><i></i><i></i></div><h3 id="fileTitle">把数据表拖到这里</h3><p id="fileInfo">支持 .xlsx / .xlsm，单个文件不超过 10 MB</p><button id="chooseFile" class="outline">选择 Excel 文件</button><input id="excelFile" type="file" accept=".xlsx,.xlsm" aria-label="上传 Excel 数据表" hidden></div>
+        <div class="footnote"><span aria-hidden="true">ⓘ</span><p>请使用已重算并保存的资产负债表。原始文件不会被修改。</p></div>
+      </section>
+      <section class="card template-card"><div class="section-head"><h2><span class="number">02</span> 报告模板</h2><button class="text-button" id="addTemplate">＋ 添加模板</button></div><p class="section-note">选择这次要套用的报告格式</p><div id="templateList" class="template-list" role="radiogroup" aria-label="报告模板"></div><div class="template-help"><span class="mini-doc" aria-hidden="true">W</span><p>模板中的字体、表格和版式会保留。<br>每套模板配有对应的填报规则。</p></div></section>
+    </div>
+    <section class="action-card"><div><strong>准备好了吗？</strong><p id="readyText">上传数据表并选择模板，即可开始。</p></div><button class="primary" id="generate" disabled>生成报告 <span aria-hidden="true">→</span></button></section>
+    <details class="ai-settings"><summary>可选：用 DeepSeek 辅助识别表格布局 <span>适用于行列位置变化的表格</span></summary><div class="ai-body"><label class="check-label"><input id="useAI" type="checkbox">启用 AI 识别</label><p id="aiDescription">正在检查本机配置…</p><p>启用后，科目、表头、公司文字及坐标会发送到 DeepSeek；数值单元格及公式内容会隐藏。识别完成后需要先确认映射，再生成报告。</p></div></details>
+    <section id="statusPanel" class="status-panel" aria-live="polite" hidden><div id="busyPanel" hidden><div class="busy-line"><span class="spinner"></span><strong id="busyText">正在检查数据并生成报告…</strong></div><p>请保持页面打开。核对通过后才会生成 Word。</p></div><div id="errorPanel" hidden><div class="result-label error-label">需要检查</div><h2>这次暂未生成报告</h2><p>请检查所选模板与数据表的科目、公司、日期和金额单位是否一致。</p><ul id="errors"></ul><div id="failureDownloads" class="downloads"></div></div><div id="successPanel" hidden><div class="result-label">已完成</div><h2>报告已经准备好了。</h2><p id="successSummary"></p><div id="downloads" class="downloads"></div></div><details id="warningsPanel" hidden><summary>查看使用提示</summary><ul id="warnings"></ul></details></section>
+    <section id="reviewPanel" class="card review-panel" hidden><div class="result-label">等待确认</div><h2>先核对 AI 找到的位置</h2><p>请对照原 Excel 核对科目含义、期间和读取位置。确认后，程序会检查金额与 Word 模板。</p><div class="table-wrap"><table><thead><tr><th>科目 / 字段</th><th>科目位置</th><th>金额位置</th><th>判断依据</th></tr></thead><tbody id="reviewRows"></tbody></table></div><label class="check-label"><input type="checkbox" id="acceptMapping">我已核对科目、期间和对应位置</label><div class="review-actions"><button class="outline" id="cancelReview">返回修改</button><button class="primary" id="confirmMapping" disabled>确认并生成报告 →</button></div></section>
+    <footer><span>AccountAgent</span><span>先校验，再填报。每次生成均保留核对记录。</span></footer>
+  </main>
+</div>
+<dialog id="templateDialog"><form id="templateForm"><div class="dialog-header"><h2>添加我的模板</h2><button type="button" class="close-button" id="closeDialog" aria-label="关闭添加模板">×</button></div><p class="dialog-intro">Word 模板与对应规则成套添加，保存后可以反复选择。</p><label class="form-label" for="templateName">模板名称</label><input id="templateName" class="text-input" maxlength="60" required placeholder="例如：月度会计报告"><label class="form-label" for="wordFile">Word 模板</label><input id="wordFile" type="file" accept=".docx" required><label class="form-label" for="configFile">配套填报规则</label><input id="configFile" type="file" accept=".json" required><p class="small">选择与该模板配套的 JSON 规则文件。首次接入自己的模板时，需要先完成科目和填入位置的配置。</p><p id="templateError" class="form-error" role="alert"></p><button type="submit" class="primary full-width" id="saveTemplate">保存模板</button></form></dialog>
+</body></html>
