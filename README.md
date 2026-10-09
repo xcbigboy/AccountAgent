@@ -6,6 +6,22 @@
 
 ## 先运行一次示例
 
+### 使用中文操作界面
+
+Windows 双击 **run_ui.bat**，会自动打开本机网页。日常操作只需：**上传 Excel → 选择报告模板 → 生成并下载 Word**。默认示例模板可以点击“先用示例试一试”直接体验；自己的模板通过“添加模板”成套导入 Word 和对应 JSON 填报规则，添加一次后可重复选择。
+
+![中文操作界面](docs/ui-preview.png)
+
+也可在项目根目录启动：
+
+```sh
+python -m accounting_report ui
+```
+
+默认地址为 `http://127.0.0.1:8765`。界面只监听本机，上传和输出保存在 `results/ui/`；普通填报不需要 API key。可选 DeepSeek 入口折叠在页面下方，设置本机 `DEEPSEEK_API_KEY` 后重启界面即可启用。详见 [界面操作说明](docs/ui.md)。
+
+### 使用命令行或运行示例
+
 需要 Python 3.10 或以上。核心运行只依赖 `openpyxl` 和 `lxml`，不要求安装 Microsoft Office、不要求联网调用 AI。首次安装依赖需要网络，依赖已安装后核心流程可以离线运行。
 
 Windows 可双击项目根目录的 **run_demo.bat**。它会创建本项目专用的虚拟环境、安装依赖并运行示例。示例 Word 和日志保存到新的 `results/日期时间-随机编号/` 目录。如果 Windows 提示找不到 `py`，安装 Python 并勾选启动器，或按下面手动运行。若双击窗口关闭过快，可在终端运行该文件查看错误。
@@ -45,6 +61,7 @@ python -m accounting_report run --excel examples/balance_sheet.xlsx --template e
 ## 已包含的文件
 
 - `accounting_report/`：四层核心源码、命令行入口和可选 AI 适配器。
+- `accounting_report/web/`：本地网页界面；`run_ui.bat`：Windows 界面启动入口。
 - `examples/balance_sheet.xlsx`：左右两栏、两期余额、带合计公式及已保存计算结果的示例资产负债表。
 - `examples/report_template.docx`：正文和表格占位符模板，含跨多个 Word run 的占位符。
 - `examples/mapping.json`：32 个金额字段、16 项勾稽检查、元到万元的换算配置。

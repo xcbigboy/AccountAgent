@@ -7,7 +7,7 @@
     },
     {
       "path": "accounting_report/__init__.py",
-      "sha256": "d29d6d7b83c2e6a9aa843020830964e451eb21c3eefd4ec1d7ca99fa08127344",
+      "sha256": "9fed21d64a471aaf24ba83958b8763f94946b38f2523279c6d0334eb6d7fbde4",
       "bytes": 82
     },
     {
@@ -22,8 +22,8 @@
     },
     {
       "path": "accounting_report/cli.py",
-      "sha256": "e0af14f165b853be81136c9633cc5a10cca2baaaaa496a752e814f8930943fca",
-      "bytes": 5995
+      "sha256": "4f3e811d2375105451dc5e9983000ebbb564e439dc645270ad3536430b6ce7d8",
+      "bytes": 6516
     },
     {
       "path": "accounting_report/config.py",
@@ -56,9 +56,29 @@
       "bytes": 5782
     },
     {
+      "path": "accounting_report/ui.py",
+      "sha256": "10e823bee9cae73f3aece0f13f8b51d4c1d8fcd3028c80bdf6401205ed3a196f",
+      "bytes": 15294
+    },
+    {
       "path": "accounting_report/validate.py",
       "sha256": "eabcc2d7fcd41388b3576caf75d8b3abe374c5eef24c9e177928d0200259a999",
       "bytes": 1647
+    },
+    {
+      "path": "accounting_report/web/app.js",
+      "sha256": "b985b8ca786e60c2b990fbd189275a7aa04672e27f249b36d816fb579bd1a783",
+      "bytes": 9082
+    },
+    {
+      "path": "accounting_report/web/index.html",
+      "sha256": "11009432cc810b8ed215e25cea102feb5eeb6fec96abdd1ca4ec40f8013a6b9f",
+      "bytes": 6147
+    },
+    {
+      "path": "accounting_report/web/style.css",
+      "sha256": "9f5cd6b7164fe45f01ed1ca90223ff925fc73598b79903facdb2f4111a3442bc",
+      "bytes": 9490
     },
     {
       "path": "accounting_report/word.py",
@@ -96,6 +116,16 @@
       "bytes": 6242
     },
     {
+      "path": "docs/ui-preview.png",
+      "sha256": "bf6c2c8eb2e212ea3b14cdf5c81d284171b8b16bc3152c35bc38ea0f6590df93",
+      "bytes": 55038
+    },
+    {
+      "path": "docs/ui.md",
+      "sha256": "aaa83c46e1b893eef51511afa7c6cf1fe263103e7effcff4ec676d393b6a8be5",
+      "bytes": 4622
+    },
+    {
       "path": "examples/balance_sheet.xlsx",
       "sha256": "b85e97e80d55d1bc145324c825ce6e80011596f45e4abf245615ff38f2489853",
       "bytes": 4841
@@ -117,13 +147,13 @@
     },
     {
       "path": "pyproject.toml",
-      "sha256": "6064b8cd3119a01a8280a530a4ffbcead4e4ccca0624601ad1ba49ea36292d6d",
-      "bytes": 490
+      "sha256": "eb7e039f6eae008e23ee0e100cc731e3a0d5cbd67e525d947ae7de60dc031d08",
+      "bytes": 582
     },
     {
       "path": "README.md",
-      "sha256": "f849fa37177faa1ac55f1f468798501638030a9b61224fd971f70d297c87beeb",
-      "bytes": 14943
+      "sha256": "f004e319b42466cd4c41bf65fdeeb576678d48bd72cfb232e6088f6ea2678b16",
+      "bytes": 15860
     },
     {
       "path": "requirements-dev.txt",
@@ -141,6 +171,11 @@
       "bytes": 262
     },
     {
+      "path": "run_ui.bat",
+      "sha256": "16b87aa84bcb57a8e20011e915506ce5b14c715771c8683fb8bf191b7772ba17",
+      "bytes": 428
+    },
+    {
       "path": "tests/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0
@@ -156,9 +191,14 @@
       "bytes": 22653
     },
     {
+      "path": "tests/test_ui.py",
+      "sha256": "6ea6688a5779d191a7fd326f2dfc1fd76d645666c3131ac7ddcae4fa4633196a",
+      "bytes": 10278
+    },
+    {
       "path": "VERIFICATION.md",
-      "sha256": "82c590a385656cf141f74b43a5fd4a817eacbe94190baa27ba04137c12e891ef",
-      "bytes": 2976
+      "sha256": "c6f6d2779c08e4a661a297424bde19c94edb9ac2908fbb514920e3cd3a649686",
+      "bytes": 3414
     }
   ]
 }
