@@ -1,0 +1,928 @@
+{
+  "version": "1.0.0",
+  "started_at_utc": "2026-10-09T03:44:10.166159+00:00",
+  "status": "completed",
+  "dry_run": false,
+  "inputs": {
+    "excel": {
+      "path": "C:\\Users\\12691\\Documents\\Codex\\2026-10-09\\referenced-chatgpt-conversation-this-is-an\\outputs\\accounting-report\\examples\\balance_sheet.xlsx",
+      "sha256": "b85e97e80d55d1bc145324c825ce6e80011596f45e4abf245615ff38f2489853"
+    },
+    "template": {
+      "path": "C:\\Users\\12691\\Documents\\Codex\\2026-10-09\\referenced-chatgpt-conversation-this-is-an\\outputs\\accounting-report\\examples\\report_template.docx",
+      "sha256": "4c74be61559b025f49d6320d2b3caa5e67f044751dd4f42cc4a4f36986032226"
+    },
+    "config": {
+      "path": "C:\\Users\\12691\\Documents\\Codex\\2026-10-09\\referenced-chatgpt-conversation-this-is-an\\outputs\\accounting-report\\examples\\mapping.json",
+      "sha256": "d79850a45565e06117fb98bc20f8ed5ab4b2da67f820911e219e5619c54708f9"
+    }
+  },
+  "records": [
+    {
+      "id": "cash.end",
+      "label": "货币资金",
+      "label_cell": "A6",
+      "sheet": "资产负债表",
+      "cell": "B6",
+      "period": "end",
+      "raw": 1200000.5,
+      "formula": null,
+      "value": "1200000.5",
+      "blank_as_zero": false,
+      "formatted": "120.00",
+      "converted": "120.00005",
+      "rounded": "120.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "cash.begin",
+      "label": "货币资金",
+      "label_cell": "A6",
+      "sheet": "资产负债表",
+      "cell": "C6",
+      "period": "begin",
+      "raw": 800000,
+      "formula": null,
+      "value": "800000",
+      "blank_as_zero": false,
+      "formatted": "80.00",
+      "converted": "80",
+      "rounded": "80.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "receivables.end",
+      "label": "应收账款",
+      "label_cell": "A7",
+      "sheet": "资产负债表",
+      "cell": "B7",
+      "period": "end",
+      "raw": 2300000,
+      "formula": null,
+      "value": "2300000",
+      "blank_as_zero": false,
+      "formatted": "230.00",
+      "converted": "230",
+      "rounded": "230.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "receivables.begin",
+      "label": "应收账款",
+      "label_cell": "A7",
+      "sheet": "资产负债表",
+      "cell": "C7",
+      "period": "begin",
+      "raw": 2000000,
+      "formula": null,
+      "value": "2000000",
+      "blank_as_zero": false,
+      "formatted": "200.00",
+      "converted": "200",
+      "rounded": "200.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "inventory.end",
+      "label": "存货",
+      "label_cell": "A8",
+      "sheet": "资产负债表",
+      "cell": "B8",
+      "period": "end",
+      "raw": 1500000,
+      "formula": null,
+      "value": "1500000",
+      "blank_as_zero": false,
+      "formatted": "150.00",
+      "converted": "150",
+      "rounded": "150.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "inventory.begin",
+      "label": "存货",
+      "label_cell": "A8",
+      "sheet": "资产负债表",
+      "cell": "C8",
+      "period": "begin",
+      "raw": 1200000,
+      "formula": null,
+      "value": "1200000",
+      "blank_as_zero": false,
+      "formatted": "120.00",
+      "converted": "120",
+      "rounded": "120.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "current_assets.end",
+      "label": "流动资产合计",
+      "label_cell": "A9",
+      "sheet": "资产负债表",
+      "cell": "B9",
+      "period": "end",
+      "raw": 5000000.5,
+      "formula": "=SUM(B6:B8)",
+      "value": "5000000.5",
+      "blank_as_zero": false,
+      "formatted": "500.00",
+      "converted": "500.00005",
+      "rounded": "500.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "current_assets.begin",
+      "label": "流动资产合计",
+      "label_cell": "A9",
+      "sheet": "资产负债表",
+      "cell": "C9",
+      "period": "begin",
+      "raw": 4000000,
+      "formula": "=SUM(C6:C8)",
+      "value": "4000000",
+      "blank_as_zero": false,
+      "formatted": "400.00",
+      "converted": "400",
+      "rounded": "400.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "fixed_assets.end",
+      "label": "固定资产",
+      "label_cell": "A10",
+      "sheet": "资产负债表",
+      "cell": "B10",
+      "period": "end",
+      "raw": 3000000,
+      "formula": null,
+      "value": "3000000",
+      "blank_as_zero": false,
+      "formatted": "300.00",
+      "converted": "300",
+      "rounded": "300.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "fixed_assets.begin",
+      "label": "固定资产",
+      "label_cell": "A10",
+      "sheet": "资产负债表",
+      "cell": "C10",
+      "period": "begin",
+      "raw": 2800000,
+      "formula": null,
+      "value": "2800000",
+      "blank_as_zero": false,
+      "formatted": "280.00",
+      "converted": "280",
+      "rounded": "280.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "noncurrent_assets.end",
+      "label": "非流动资产合计",
+      "label_cell": "A11",
+      "sheet": "资产负债表",
+      "cell": "B11",
+      "period": "end",
+      "raw": 3000000,
+      "formula": "=B10",
+      "value": "3000000",
+      "blank_as_zero": false,
+      "formatted": "300.00",
+      "converted": "300",
+      "rounded": "300.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "noncurrent_assets.begin",
+      "label": "非流动资产合计",
+      "label_cell": "A11",
+      "sheet": "资产负债表",
+      "cell": "C11",
+      "period": "begin",
+      "raw": 2800000,
+      "formula": "=C10",
+      "value": "2800000",
+      "blank_as_zero": false,
+      "formatted": "280.00",
+      "converted": "280",
+      "rounded": "280.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "assets.end",
+      "label": "资产总计",
+      "label_cell": "A12",
+      "sheet": "资产负债表",
+      "cell": "B12",
+      "period": "end",
+      "raw": 8000000.5,
+      "formula": "=B9+B11",
+      "value": "8000000.5",
+      "blank_as_zero": false,
+      "formatted": "800.00",
+      "converted": "800.00005",
+      "rounded": "800.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "assets.begin",
+      "label": "资产总计",
+      "label_cell": "A12",
+      "sheet": "资产负债表",
+      "cell": "C12",
+      "period": "begin",
+      "raw": 6800000,
+      "formula": "=C9+C11",
+      "value": "6800000",
+      "blank_as_zero": false,
+      "formatted": "680.00",
+      "converted": "680",
+      "rounded": "680.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "short_loan.end",
+      "label": "短期借款",
+      "label_cell": "E6",
+      "sheet": "资产负债表",
+      "cell": "F6",
+      "period": "end",
+      "raw": 2000000,
+      "formula": null,
+      "value": "2000000",
+      "blank_as_zero": false,
+      "formatted": "200.00",
+      "converted": "200",
+      "rounded": "200.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "short_loan.begin",
+      "label": "短期借款",
+      "label_cell": "E6",
+      "sheet": "资产负债表",
+      "cell": "G6",
+      "period": "begin",
+      "raw": 1500000,
+      "formula": null,
+      "value": "1500000",
+      "blank_as_zero": false,
+      "formatted": "150.00",
+      "converted": "150",
+      "rounded": "150.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "payables.end",
+      "label": "应付账款",
+      "label_cell": "E7",
+      "sheet": "资产负债表",
+      "cell": "F7",
+      "period": "end",
+      "raw": 1000000,
+      "formula": null,
+      "value": "1000000",
+      "blank_as_zero": false,
+      "formatted": "100.00",
+      "converted": "100",
+      "rounded": "100.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "payables.begin",
+      "label": "应付账款",
+      "label_cell": "E7",
+      "sheet": "资产负债表",
+      "cell": "G7",
+      "period": "begin",
+      "raw": 900000,
+      "formula": null,
+      "value": "900000",
+      "blank_as_zero": false,
+      "formatted": "90.00",
+      "converted": "90",
+      "rounded": "90.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "current_liabilities.end",
+      "label": "流动负债合计",
+      "label_cell": "E8",
+      "sheet": "资产负债表",
+      "cell": "F8",
+      "period": "end",
+      "raw": 3000000,
+      "formula": "=SUM(F6:F7)",
+      "value": "3000000",
+      "blank_as_zero": false,
+      "formatted": "300.00",
+      "converted": "300",
+      "rounded": "300.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "current_liabilities.begin",
+      "label": "流动负债合计",
+      "label_cell": "E8",
+      "sheet": "资产负债表",
+      "cell": "G8",
+      "period": "begin",
+      "raw": 2400000,
+      "formula": "=SUM(G6:G7)",
+      "value": "2400000",
+      "blank_as_zero": false,
+      "formatted": "240.00",
+      "converted": "240",
+      "rounded": "240.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "long_loan.end",
+      "label": "长期借款",
+      "label_cell": "E9",
+      "sheet": "资产负债表",
+      "cell": "F9",
+      "period": "end",
+      "raw": 1000000,
+      "formula": null,
+      "value": "1000000",
+      "blank_as_zero": false,
+      "formatted": "100.00",
+      "converted": "100",
+      "rounded": "100.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "long_loan.begin",
+      "label": "长期借款",
+      "label_cell": "E9",
+      "sheet": "资产负债表",
+      "cell": "G9",
+      "period": "begin",
+      "raw": 800000,
+      "formula": null,
+      "value": "800000",
+      "blank_as_zero": false,
+      "formatted": "80.00",
+      "converted": "80",
+      "rounded": "80.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "liabilities.end",
+      "label": "负债合计",
+      "label_cell": "E10",
+      "sheet": "资产负债表",
+      "cell": "F10",
+      "period": "end",
+      "raw": 4000000,
+      "formula": "=F8+F9",
+      "value": "4000000",
+      "blank_as_zero": false,
+      "formatted": "400.00",
+      "converted": "400",
+      "rounded": "400.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "liabilities.begin",
+      "label": "负债合计",
+      "label_cell": "E10",
+      "sheet": "资产负债表",
+      "cell": "G10",
+      "period": "begin",
+      "raw": 3200000,
+      "formula": "=G8+G9",
+      "value": "3200000",
+      "blank_as_zero": false,
+      "formatted": "320.00",
+      "converted": "320",
+      "rounded": "320.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "capital.end",
+      "label": "实收资本",
+      "label_cell": "E11",
+      "sheet": "资产负债表",
+      "cell": "F11",
+      "period": "end",
+      "raw": 2500000,
+      "formula": null,
+      "value": "2500000",
+      "blank_as_zero": false,
+      "formatted": "250.00",
+      "converted": "250",
+      "rounded": "250.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "capital.begin",
+      "label": "实收资本",
+      "label_cell": "E11",
+      "sheet": "资产负债表",
+      "cell": "G11",
+      "period": "begin",
+      "raw": 2500000,
+      "formula": null,
+      "value": "2500000",
+      "blank_as_zero": false,
+      "formatted": "250.00",
+      "converted": "250",
+      "rounded": "250.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "retained.end",
+      "label": "未分配利润",
+      "label_cell": "E12",
+      "sheet": "资产负债表",
+      "cell": "F12",
+      "period": "end",
+      "raw": 1500000.5,
+      "formula": null,
+      "value": "1500000.5",
+      "blank_as_zero": false,
+      "formatted": "150.00",
+      "converted": "150.00005",
+      "rounded": "150.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "retained.begin",
+      "label": "未分配利润",
+      "label_cell": "E12",
+      "sheet": "资产负债表",
+      "cell": "G12",
+      "period": "begin",
+      "raw": 1100000,
+      "formula": null,
+      "value": "1100000",
+      "blank_as_zero": false,
+      "formatted": "110.00",
+      "converted": "110",
+      "rounded": "110.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "equity.end",
+      "label": "所有者权益合计",
+      "label_cell": "E13",
+      "sheet": "资产负债表",
+      "cell": "F13",
+      "period": "end",
+      "raw": 4000000.5,
+      "formula": "=SUM(F11:F12)",
+      "value": "4000000.5",
+      "blank_as_zero": false,
+      "formatted": "400.00",
+      "converted": "400.00005",
+      "rounded": "400.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "equity.begin",
+      "label": "所有者权益合计",
+      "label_cell": "E13",
+      "sheet": "资产负债表",
+      "cell": "G13",
+      "period": "begin",
+      "raw": 3600000,
+      "formula": "=SUM(G11:G12)",
+      "value": "3600000",
+      "blank_as_zero": false,
+      "formatted": "360.00",
+      "converted": "360",
+      "rounded": "360.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "liabilities_equity.end",
+      "label": "负债和所有者权益总计",
+      "label_cell": "E14",
+      "sheet": "资产负债表",
+      "cell": "F14",
+      "period": "end",
+      "raw": 8000000.5,
+      "formula": "=F10+F13",
+      "value": "8000000.5",
+      "blank_as_zero": false,
+      "formatted": "800.00",
+      "converted": "800.00005",
+      "rounded": "800.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    },
+    {
+      "id": "liabilities_equity.begin",
+      "label": "负债和所有者权益总计",
+      "label_cell": "E14",
+      "sheet": "资产负债表",
+      "cell": "G14",
+      "period": "begin",
+      "raw": 6800000,
+      "formula": "=G10+G13",
+      "value": "6800000",
+      "blank_as_zero": false,
+      "formatted": "680.00",
+      "converted": "680",
+      "rounded": "680.00",
+      "source_unit": "元",
+      "output_unit": "万元"
+    }
+  ],
+  "checks": [
+    {
+      "name": "期末流动资产分项",
+      "left": "5000000.5",
+      "right": "5000000.5",
+      "difference": "0.0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末非流动资产分项",
+      "left": "3000000",
+      "right": "3000000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末资产合计",
+      "left": "8000000.5",
+      "right": "8000000.5",
+      "difference": "0.0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末流动负债分项",
+      "left": "3000000",
+      "right": "3000000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末负债合计",
+      "left": "4000000",
+      "right": "4000000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末权益合计",
+      "left": "4000000.5",
+      "right": "4000000.5",
+      "difference": "0.0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末负债和权益合计",
+      "left": "8000000.5",
+      "right": "8000000.5",
+      "difference": "0.0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期末资产负债平衡",
+      "left": "8000000.5",
+      "right": "8000000.5",
+      "difference": "0.0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初流动资产分项",
+      "left": "4000000",
+      "right": "4000000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初非流动资产分项",
+      "left": "2800000",
+      "right": "2800000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初资产合计",
+      "left": "6800000",
+      "right": "6800000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初流动负债分项",
+      "left": "2400000",
+      "right": "2400000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初负债合计",
+      "left": "3200000",
+      "right": "3200000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初权益合计",
+      "left": "3600000",
+      "right": "3600000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初负债和权益合计",
+      "left": "6800000",
+      "right": "6800000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    },
+    {
+      "name": "期初资产负债平衡",
+      "left": "6800000",
+      "right": "6800000",
+      "difference": "0",
+      "tolerance": "0.01",
+      "status": "passed"
+    }
+  ],
+  "word_changes": [
+    {
+      "target": "equity.end",
+      "part": "word/document.xml",
+      "before": "{{equity.end}}",
+      "after": "400.00"
+    },
+    {
+      "target": "liabilities.end",
+      "part": "word/document.xml",
+      "before": "{{liabilities.end}}",
+      "after": "400.00"
+    },
+    {
+      "target": "assets.end",
+      "part": "word/document.xml",
+      "before": "{{assets.end}}",
+      "after": "800.00"
+    },
+    {
+      "target": "cash.end",
+      "part": "word/document.xml",
+      "before": "{{cash.end}}",
+      "after": "120.00"
+    },
+    {
+      "target": "cash.begin",
+      "part": "word/document.xml",
+      "before": "{{cash.begin}}",
+      "after": "80.00"
+    },
+    {
+      "target": "receivables.end",
+      "part": "word/document.xml",
+      "before": "{{receivables.end}}",
+      "after": "230.00"
+    },
+    {
+      "target": "receivables.begin",
+      "part": "word/document.xml",
+      "before": "{{receivables.begin}}",
+      "after": "200.00"
+    },
+    {
+      "target": "inventory.end",
+      "part": "word/document.xml",
+      "before": "{{inventory.end}}",
+      "after": "150.00"
+    },
+    {
+      "target": "inventory.begin",
+      "part": "word/document.xml",
+      "before": "{{inventory.begin}}",
+      "after": "120.00"
+    },
+    {
+      "target": "current_assets.end",
+      "part": "word/document.xml",
+      "before": "{{current_assets.end}}",
+      "after": "500.00"
+    },
+    {
+      "target": "current_assets.begin",
+      "part": "word/document.xml",
+      "before": "{{current_assets.begin}}",
+      "after": "400.00"
+    },
+    {
+      "target": "fixed_assets.end",
+      "part": "word/document.xml",
+      "before": "{{fixed_assets.end}}",
+      "after": "300.00"
+    },
+    {
+      "target": "fixed_assets.begin",
+      "part": "word/document.xml",
+      "before": "{{fixed_assets.begin}}",
+      "after": "280.00"
+    },
+    {
+      "target": "noncurrent_assets.end",
+      "part": "word/document.xml",
+      "before": "{{noncurrent_assets.end}}",
+      "after": "300.00"
+    },
+    {
+      "target": "noncurrent_assets.begin",
+      "part": "word/document.xml",
+      "before": "{{noncurrent_assets.begin}}",
+      "after": "280.00"
+    },
+    {
+      "target": "assets.end",
+      "part": "word/document.xml",
+      "before": "{{assets.end}}",
+      "after": "800.00"
+    },
+    {
+      "target": "assets.begin",
+      "part": "word/document.xml",
+      "before": "{{assets.begin}}",
+      "after": "680.00"
+    },
+    {
+      "target": "short_loan.end",
+      "part": "word/document.xml",
+      "before": "{{short_loan.end}}",
+      "after": "200.00"
+    },
+    {
+      "target": "short_loan.begin",
+      "part": "word/document.xml",
+      "before": "{{short_loan.begin}}",
+      "after": "150.00"
+    },
+    {
+      "target": "payables.end",
+      "part": "word/document.xml",
+      "before": "{{payables.end}}",
+      "after": "100.00"
+    },
+    {
+      "target": "payables.begin",
+      "part": "word/document.xml",
+      "before": "{{payables.begin}}",
+      "after": "90.00"
+    },
+    {
+      "target": "current_liabilities.end",
+      "part": "word/document.xml",
+      "before": "{{current_liabilities.end}}",
+      "after": "300.00"
+    },
+    {
+      "target": "current_liabilities.begin",
+      "part": "word/document.xml",
+      "before": "{{current_liabilities.begin}}",
+      "after": "240.00"
+    },
+    {
+      "target": "long_loan.end",
+      "part": "word/document.xml",
+      "before": "{{long_loan.end}}",
+      "after": "100.00"
+    },
+    {
+      "target": "long_loan.begin",
+      "part": "word/document.xml",
+      "before": "{{long_loan.begin}}",
+      "after": "80.00"
+    },
+    {
+      "target": "liabilities.end",
+      "part": "word/document.xml",
+      "before": "{{liabilities.end}}",
+      "after": "400.00"
+    },
+    {
+      "target": "liabilities.begin",
+      "part": "word/document.xml",
+      "before": "{{liabilities.begin}}",
+      "after": "320.00"
+    },
+    {
+      "target": "capital.end",
+      "part": "word/document.xml",
+      "before": "{{capital.end}}",
+      "after": "250.00"
+    },
+    {
+      "target": "capital.begin",
+      "part": "word/document.xml",
+      "before": "{{capital.begin}}",
+      "after": "250.00"
+    },
+    {
+      "target": "retained.end",
+      "part": "word/document.xml",
+      "before": "{{retained.end}}",
+      "after": "150.00"
+    },
+    {
+      "target": "retained.begin",
+      "part": "word/document.xml",
+      "before": "{{retained.begin}}",
+      "after": "110.00"
+    },
+    {
+      "target": "equity.end",
+      "part": "word/document.xml",
+      "before": "{{equity.end}}",
+      "after": "400.00"
+    },
+    {
+      "target": "equity.begin",
+      "part": "word/document.xml",
+      "before": "{{equity.begin}}",
+      "after": "360.00"
+    },
+    {
+      "target": "liabilities_equity.end",
+      "part": "word/document.xml",
+      "before": "{{liabilities_equity.end}}",
+      "after": "800.00"
+    },
+    {
+      "target": "liabilities_equity.begin",
+      "part": "word/document.xml",
+      "before": "{{liabilities_equity.begin}}",
+      "after": "680.00"
+    }
+  ],
+  "warnings": [
+    "current_assets.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "current_assets.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "noncurrent_assets.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "noncurrent_assets.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "assets.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "assets.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "current_liabilities.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "current_liabilities.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "liabilities.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "liabilities.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "equity.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "equity.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "liabilities_equity.end 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存",
+    "liabilities_equity.begin 使用 Excel 缓存的公式值，程序不重算公式；需确认源文件已重算并保存"
+  ],
+  "errors": [],
+  "source_unit": "元",
+  "report_sha256": "32a099d298cada602303c7be6335afdd6b22d2d157ded86123009487a134f9a6",
+  "finished_at_utc": "2026-10-09T03:44:10.225295+00:00"
+}
