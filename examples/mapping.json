@@ -1,0 +1,660 @@
+{
+  "version": 1,
+  "source": {
+    "sheet": "资产负债表",
+    "unit": "元",
+    "blocks": [
+      {
+        "id": "assets",
+        "label_column": "A",
+        "start_row": 6,
+        "end_row": 12,
+        "period_columns": {
+          "end": "B",
+          "begin": "C"
+        }
+      },
+      {
+        "id": "liabilities",
+        "label_column": "E",
+        "start_row": 6,
+        "end_row": 14,
+        "period_columns": {
+          "end": "F",
+          "begin": "G"
+        }
+      }
+    ]
+  },
+  "metadata": [
+    {
+      "cell": "B3",
+      "expected": "示例有限公司"
+    },
+    {
+      "cell": "F3",
+      "expected": "元"
+    },
+    {
+      "cell": "B4",
+      "expected": "2026-09-30"
+    },
+    {
+      "cell": "C4",
+      "expected": "2025-12-31"
+    },
+    {
+      "cell": "F4",
+      "expected": "2026-09-30"
+    },
+    {
+      "cell": "G4",
+      "expected": "2025-12-31"
+    }
+  ],
+  "fields": [
+    {
+      "id": "cash.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "货币资金"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "cash.end"
+      }
+    },
+    {
+      "id": "cash.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "货币资金"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "cash.begin"
+      }
+    },
+    {
+      "id": "receivables.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "应收账款"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "receivables.end"
+      }
+    },
+    {
+      "id": "receivables.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "应收账款"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "receivables.begin"
+      }
+    },
+    {
+      "id": "inventory.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "存货"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "inventory.end"
+      }
+    },
+    {
+      "id": "inventory.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "存货"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "inventory.begin"
+      }
+    },
+    {
+      "id": "current_assets.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "流动资产合计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "current_assets.end"
+      }
+    },
+    {
+      "id": "current_assets.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "流动资产合计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "current_assets.begin"
+      }
+    },
+    {
+      "id": "fixed_assets.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "固定资产"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "fixed_assets.end"
+      }
+    },
+    {
+      "id": "fixed_assets.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "固定资产"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "fixed_assets.begin"
+      }
+    },
+    {
+      "id": "noncurrent_assets.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "非流动资产合计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "noncurrent_assets.end"
+      }
+    },
+    {
+      "id": "noncurrent_assets.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "非流动资产合计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "noncurrent_assets.begin"
+      }
+    },
+    {
+      "id": "assets.end",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "资产总计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "assets.end",
+        "occurrences": 2
+      }
+    },
+    {
+      "id": "assets.begin",
+      "source": {
+        "block": "assets",
+        "labels": [
+          "资产总计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "assets.begin"
+      }
+    },
+    {
+      "id": "short_loan.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "短期借款"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "short_loan.end"
+      }
+    },
+    {
+      "id": "short_loan.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "短期借款"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "short_loan.begin"
+      }
+    },
+    {
+      "id": "payables.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "应付账款"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "payables.end"
+      }
+    },
+    {
+      "id": "payables.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "应付账款"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "payables.begin"
+      }
+    },
+    {
+      "id": "current_liabilities.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "流动负债合计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "current_liabilities.end"
+      }
+    },
+    {
+      "id": "current_liabilities.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "流动负债合计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "current_liabilities.begin"
+      }
+    },
+    {
+      "id": "long_loan.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "长期借款"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "long_loan.end"
+      }
+    },
+    {
+      "id": "long_loan.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "长期借款"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "long_loan.begin"
+      }
+    },
+    {
+      "id": "liabilities.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "负债合计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "liabilities.end",
+        "occurrences": 2
+      }
+    },
+    {
+      "id": "liabilities.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "负债合计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "liabilities.begin"
+      }
+    },
+    {
+      "id": "capital.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "实收资本"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "capital.end"
+      }
+    },
+    {
+      "id": "capital.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "实收资本"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "capital.begin"
+      }
+    },
+    {
+      "id": "retained.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "未分配利润"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "retained.end"
+      }
+    },
+    {
+      "id": "retained.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "未分配利润"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "retained.begin"
+      }
+    },
+    {
+      "id": "equity.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "所有者权益合计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "equity.end",
+        "occurrences": 2
+      }
+    },
+    {
+      "id": "equity.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "所有者权益合计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "equity.begin"
+      }
+    },
+    {
+      "id": "liabilities_equity.end",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "负债和所有者权益总计"
+        ],
+        "period": "end"
+      },
+      "target": {
+        "placeholder": "liabilities_equity.end"
+      }
+    },
+    {
+      "id": "liabilities_equity.begin",
+      "source": {
+        "block": "liabilities",
+        "labels": [
+          "负债和所有者权益总计"
+        ],
+        "period": "begin"
+      },
+      "target": {
+        "placeholder": "liabilities_equity.begin"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "期末流动资产分项",
+      "left": [
+        "current_assets.end"
+      ],
+      "right": [
+        "cash.end",
+        "receivables.end",
+        "inventory.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末非流动资产分项",
+      "left": [
+        "noncurrent_assets.end"
+      ],
+      "right": [
+        "fixed_assets.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末资产合计",
+      "left": [
+        "assets.end"
+      ],
+      "right": [
+        "current_assets.end",
+        "noncurrent_assets.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末流动负债分项",
+      "left": [
+        "current_liabilities.end"
+      ],
+      "right": [
+        "short_loan.end",
+        "payables.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末负债合计",
+      "left": [
+        "liabilities.end"
+      ],
+      "right": [
+        "current_liabilities.end",
+        "long_loan.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末权益合计",
+      "left": [
+        "equity.end"
+      ],
+      "right": [
+        "capital.end",
+        "retained.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末负债和权益合计",
+      "left": [
+        "liabilities_equity.end"
+      ],
+      "right": [
+        "liabilities.end",
+        "equity.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期末资产负债平衡",
+      "left": [
+        "assets.end"
+      ],
+      "right": [
+        "liabilities.end",
+        "equity.end"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初流动资产分项",
+      "left": [
+        "current_assets.begin"
+      ],
+      "right": [
+        "cash.begin",
+        "receivables.begin",
+        "inventory.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初非流动资产分项",
+      "left": [
+        "noncurrent_assets.begin"
+      ],
+      "right": [
+        "fixed_assets.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初资产合计",
+      "left": [
+        "assets.begin"
+      ],
+      "right": [
+        "current_assets.begin",
+        "noncurrent_assets.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初流动负债分项",
+      "left": [
+        "current_liabilities.begin"
+      ],
+      "right": [
+        "short_loan.begin",
+        "payables.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初负债合计",
+      "left": [
+        "liabilities.begin"
+      ],
+      "right": [
+        "current_liabilities.begin",
+        "long_loan.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初权益合计",
+      "left": [
+        "equity.begin"
+      ],
+      "right": [
+        "capital.begin",
+        "retained.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初负债和权益合计",
+      "left": [
+        "liabilities_equity.begin"
+      ],
+      "right": [
+        "liabilities.begin",
+        "equity.begin"
+      ],
+      "tolerance": "0.01"
+    },
+    {
+      "name": "期初资产负债平衡",
+      "left": [
+        "assets.begin"
+      ],
+      "right": [
+        "liabilities.begin",
+        "equity.begin"
+      ],
+      "tolerance": "0.01"
+    }
+  ],
+  "format": {
+    "unit": "万元",
+    "decimals": 2,
+    "grouping": true,
+    "negative": "parentheses"
+  }
+}
